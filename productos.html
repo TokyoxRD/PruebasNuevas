@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hansel plantas - Productos</title>
+    <link rel="stylesheet" href="estilo de paginas/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"> Hansel plantas</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html" class="active">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="carrito.html" class="carrito-btn">
+                 Carrito
+                <span class="carrito-count" id="carrito-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Título de la página -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nuestros Productos</h1>
+            <p>Explora nuestra colección completa de plantas medicinales y ornamentales</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filtros-section">
+        <div class="container">
+            <div class="filtros">
+                <button class="filtro-btn active" onclick="filtrarPor('todos')">Todos los Productos</button>
+                <button class="filtro-btn" onclick="filtrarPor('medicinales')">Plantas Medicinales</button>
+                <button class="filtro-btn" onclick="filtrarPor('ornamentales')">Plantas Ornamentales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Productos -->
+    <section class="productos-section">
+        <div class="container">
+            <div class="productos-grid" id="productos-grid">
+                <!-- Los productos se cargan aquí dinámicamente desde JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hansel plantas</h3>
+                    <p>Tu jardín natural, nuestro compromiso</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                     <p> WhatsApp: +1 849 657 6009</p>
+                    <p> Hanselsamp73@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Cargar productos al abrir la página
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarProductos();
+            actualizarContadorCarrito();
+            
+            // Verificar si hay un anchor para filtrar (ej: #medicinales)
+            const hash = window.location.hash.substring(1);
+            if (hash && (hash === 'medicinales' || hash === 'ornamentales')) {
+                filtrarPor(hash);
+                // Actualizar botón activo
+                document.querySelectorAll('.filtro-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase().includes(hash)) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

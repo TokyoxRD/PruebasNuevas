@@ -1,0 +1,119 @@
+[
+    {
+        "id": 1,
+        "nombre": "Aloe Vera",
+        "precio": 12.50,
+        "categoria": "medicinales",
+        "imagen": "🌿",
+        "descripcion": "Planta conocida por sus propiedades curativas y regenerativas. Ideal para la piel.",
+        "caracteristicas": [
+            "Fácil cuidado",
+            "Uso tópico y medicinal",
+            "Purifica el aire"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Menta",
+        "precio": 8.00,
+        "categoria": "medicinales",
+        "imagen": "🍃",
+        "descripcion": "Hierba aromática con propiedades digestivas y refrescantes. Perfecta para infusiones.",
+        "caracteristicas": [
+            "Aroma intenso",
+            "Uso culinario y medicinal",
+            "Crece rápidamente"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Orquídea Phalaenopsis",
+        "precio": 25.99,
+        "categoria": "ornamentales",
+        "imagen": "🌸",
+        "descripcion": "Elegante orquídea de larga floración que embellece cualquier espacio.",
+        "caracteristicas": [
+            "Flores duraderas",
+            "Variedad de colores",
+            "Requiere luz indirecta"
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Helecho Boston",
+        "precio": 18.75,
+        "categoria": "ornamentales",
+        "imagen": " fern",
+        "descripcion": "Helecho frondoso y purificador de aire, ideal para interiores.",
+        "caracteristicas": [
+            "Purificador de aire",
+            "Requiere humedad",
+            "Ideal para sombra"
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Romero",
+        "precio": 9.25,
+        "categoria": "medicinales",
+        "imagen": "🌿",
+        "descripcion": "Hierba aromática con usos culinarios y propiedades antioxidantes y estimulantes.",
+        "caracteristicas": [
+            "Aroma fresco",
+            "Beneficios para la memoria",
+            "Requiere sol pleno"
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Cactus Saguaro",
+        "precio": 35.00,
+        "categoria": "ornamentales",
+        "imagen": "🌵",
+        "descripcion": "Cactus icónico del desierto, de crecimiento lento y muy resistente.",
+        "caracteristicas": [
+            "Bajo mantenimiento",
+            "Requiere poca agua",
+            "Ideal para climas secos"
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Lavanda",
+        "precio": 15.00,
+        "categoria": "medicinales",
+        "imagen": "💜",
+        "descripcion": "Flor aromática conocida por sus propiedades relajantes y su hermoso color.",
+        "caracteristicas": [
+            "Aroma relajante",
+            "Atrae polinizadores",
+            "Uso en aromaterapia"
+        ]
+    },
+    {
+        "id": 8,
+        "nombre": "Monstera Deliciosa",
+        "precio": 30.50,
+        "categoria": "ornamentales",
+        "imagen": "🌱",
+        "descripcion": "Planta tropical con hojas grandes y distintivas, muy popular en decoración.",
+        "caracteristicas": [
+            "Hojas grandes y vistosas",
+            "Fácil de cuidar",
+            "Requiere luz brillante indirecta"
+        ]
+    },
+    {
+        "id": 9,
+        "nombre": "Manzanilla",
+        "precio": 7.50,
+        "categoria": "medicinales",
+        "imagen": "🌼",
+        "descripcion": "Hierba con flores pequeñas, ideal para infusiones calmantes y digestivas.",
+        "caracteristicas": [
+            "Propiedades calmantes",
+            "Uso en infusiones",
+            "Crecimiento anual"
+        ]
+    }
+]

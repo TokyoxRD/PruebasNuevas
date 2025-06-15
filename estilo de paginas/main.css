@@ -1,0 +1,21 @@
+/* main.css */
+
+/* Base y configuración global */
+@import url('base.css');
+
+/* Estructura general de la página (header, footer, etc.) */
+@import url('layout.css'); 
+
+/* Componentes reutilizables (botones, tarjetas de producto) */
+@import url('components.css');
+
+/* Estilos específicos de cada página */
+@import url('pages/home.css'); 
+@import url('pages/productos.css'); 
+@import url('pages/producto-detalle.css'); 
+@import url('pages/carta.css'); 
+@import url('pages/nosotros.css'); 
+@import url('pages/contacto.css'); 
+
+/* Media Queries para Diseño Adaptable */
+@import url('responsividad.css'); 

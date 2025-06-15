@@ -1,0 +1,77 @@
+/* pages/about.css */
+
+.about-us-content {
+    padding: 60px 0;
+    background: white;
+}
+
+.about-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.about-us-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-us-text h2 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 25px;
+}
+
+.about-us-text p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.values-section {
+    padding: 40px 0;
+    text-align: center;
+    background: #f0f4f8;
+    border-radius: 15px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+}
+
+.values-section h2 {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 40px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #555;
+    line-height: 1.6;
+}

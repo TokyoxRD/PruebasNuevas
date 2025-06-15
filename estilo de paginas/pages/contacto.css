@@ -1,0 +1,128 @@
+
+
+.contact-content {
+    padding: 60px 0;
+    background: white;
+    flex-direction: column;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+.info-item .info-icon {
+    font-size: 1.8rem;
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.info-item a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media h3 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #5a67d8;
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    background: #f0f4f8;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    width: auto;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+

@@ -1,0 +1,79 @@
+/* pages/products.css */
+
+/* FILTROS Y BUSCADOR */
+.filtros-section {
+    padding: 40px 0;
+    background: #e2e8f0;
+    border-bottom: 1px solid #cbd5e0;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filtro-btn {
+    background: #cbd5e0;
+    color: #2d3748;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filtro-btn:hover {
+    background: #a0aec0;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.filtro-btn.active {
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 1px solid #a0aec0;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+/* PRODUCT GRID (productos.html y productos-relacionados) */
+.productos-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Nota: .producto-card, .producto-img, .producto-info, etc. están en components.css */
+/* Si necesitas ajustes muy específicos para la grid de productos, podrías añadirlos aquí,
+   pero en general, los estilos de las tarjetas son componentes.css */

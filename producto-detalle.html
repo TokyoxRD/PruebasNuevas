@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Producto - Carlos Plantas</title>
+    <link rel="stylesheet" href="estilo de paginas/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"> Hansel plantas</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="carrito.html" class="carrito-btn">
+                 Carrito
+                <span class="carrito-count" id="carrito-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a> > 
+            <a href="productos.html">Productos</a> > 
+            <span id="breadcrumb-producto">Producto</span>
+        </div>
+    </div>
+
+    <!-- Detalle del Producto -->
+    <section class="producto-detalle">
+        <div class="container">
+            <div class="producto-detalle-grid">
+                <!-- Imagen del producto -->
+                <div class="producto-imagen">
+                    <div class="imagen-placeholder" id="producto-imagen">
+                        🌿
+                    </div>
+                </div>
+                
+                <!-- Información del producto -->
+                <div class="producto-info">
+                    <div class="producto-categoria" id="producto-categoria">Cargando...</div>
+                    <h1 id="producto-nombre">Cargando producto...</h1>
+                    <div class="producto-precio" id="producto-precio">$0.00</div>
+                    
+                    <div class="producto-descripcion" id="producto-descripcion">
+                        Cargando descripción...
+                    </div>
+                    
+                    <!-- Características del producto -->
+                    <div class="producto-caracteristicas" id="producto-caracteristicas">
+                        <!-- Se llena dinámicamente -->
+                    </div>
+                    
+                    <!-- Acciones -->
+                    <div class="producto-acciones">
+                        <div class="cantidad-selector">
+                            <label for="cantidad">Cantidad:</label>
+                            <button onclick="cambiarCantidad(-1)">-</button>
+                            <input type="number" id="cantidad" value="1" min="1" max="10">
+                            <button onclick="cambiarCantidad(1)">+</button>
+                        </div>
+                        
+                        <div class="botones-accion">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarritoDetalle()">
+                                🛒 Agregar al Carrito
+                            </button>
+                            
+                            <button class="btn-whatsapp-directo" onclick="consultarPorWhatsApp()">
+                                📱 Consultar por WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Garantías y beneficios -->
+                    <div class="producto-garantias">
+                        <div class="garantia-item">
+                            <span class="garantia-icon">🚚</span>
+                            <span>Entrega gratuita en compras mayores a $30</span>
+                        </div>
+                        <div class="garantia-item">
+                            <span class="garantia-icon">🌱</span>
+                            <span>Garantía de plantas saludables</span>
+                        </div>
+                        <div class="garantia-item">
+                            <span class="garantia-icon">💬</span>
+                            <span>Asesoría gratuita para el cuidado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos relacionados -->
+    <section class="productos-relacionados">
+        <div class="container">
+            <h2>Productos Relacionados</h2>
+            <div class="productos-grid" id="productos-relacionados">
+                <!-- Se llena dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌱 Carlos Plantas</h3>
+                    <p>Tu jardín natural, nuestro compromiso</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📱 WhatsApp: +1 234 567 890</p>
+                    <p>📧 carlos.plantas@email.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let productoActual = null;
+
+        // Cargar producto al abrir la página
+        document.addEventListener('DOMContentLoaded', async function() { // Hice este async también
+            await cargarProductoDetalle(); // Asegúrate de esperar a que el producto se cargue
+            actualizarContadorCarrito();
+        });
+
+        async function cargarProductoDetalle() { // Hice esta función async
+            // Obtener ID del producto desde URL (ej: ?id=1)
+            const urlParams = new URLSearchParams(window.location.search);
+            const productoId = parseInt(urlParams.get('id'));
+
+            if (!productoId) {
+                window.location.href = 'productos.html';
+                return;
+            }
+
+            // Asegurarse de que los productos estén cargados ANTES de buscar
+            if (productos.length === 0) {
+                await cargarProductos(); 
+            }
+
+            // Buscar producto en los datos
+            productoActual = productos.find(p => p.id === productoId);
+
+            if (!productoActual) {
+                window.location.href = 'productos.html';
+                return;
+            }
+
+            // Llenar información del producto
+            document.getElementById('page-title').textContent = `${productoActual.nombre} - Carlos Plantas`;
+            document.getElementById('breadcrumb-producto').textContent = productoActual.nombre;
+            document.getElementById('producto-imagen').textContent = productoActual.imagen;
+            document.getElementById('producto-categoria').textContent = productoActual.categoria.toUpperCase();
+            document.getElementById('producto-nombre').textContent = productoActual.nombre;
+            document.getElementById('producto-precio').textContent = `$${productoActual.precio.toFixed(2)}`; // .toFixed(2) para formato de moneda
+            document.getElementById('producto-descripcion').textContent = productoActual.descripcion;
+
+            // Llenar características específicas
+            const caracteristicas = document.getElementById('producto-caracteristicas');
+            if (productoActual.caracteristicas && productoActual.caracteristicas.length > 0) { // Añadí la comprobación de longitud
+                caracteristicas.innerHTML = `
+                    <h3>Características:</h3>
+                    <ul>
+                        ${productoActual.caracteristicas.map(car => `<li>${car}</li>`).join('')}
+                    </ul>
+                `;
+            } else {
+                caracteristicas.innerHTML = ''; // Limpiar si no hay características
+            }
+
+            // Cargar productos relacionados (misma categoría)
+            cargarProductosRelacionados();
+        }
+
+        function cargarProductosRelacionados() {
+            // Filtra solo los productos cargados y evita el producto actual
+            const relacionados = productos
+                .filter(p => p.categoria === productoActual.categoria && p.id !== productoActual.id)
+                .slice(0, 3); // Limita a 3 productos relacionados
+
+            const container = document.getElementById('productos-relacionados');
+
+            if (relacionados.length === 0) {
+                container.innerHTML = '<p>No hay productos relacionados disponibles.</p>';
+                return;
+            }
+
+            container.innerHTML = relacionados.map(producto => `
+                <div class="producto-card">
+                    <div class="producto-img"><span class="math-inline">\{producto\.imagen\}</div\>
+<div class="producto-info">
+<div class="producto-categoria">{producto.categoria}</div>
+<div class="producto-nombre">producto.nombre</div><divclass="producto−precio">producto.precio.toFixed(2)</div><divclass="producto−actions"><ahref="producto−detalle.html?id={producto.id}" class="btn-ver-detalle">Ver Detalle</a>
+<button class="btn-add-to-cart" onclick="agregarAlCarrito(${producto.id})">🛒 Añadir</button>
+</div>
+</div>
+</div>
+`).join('');
+}
+
+        function cambiarCantidad(cambio) {
+            const cantidadInput = document.getElementById('cantidad');
+            let nuevaCantidad = parseInt(cantidadInput.value) + cambio;
+            
+            if (nuevaCantidad < 1) nuevaCantidad = 1; // Mínimo 1
+            if (nuevaCantidad > 10) nuevaCantidad = 10; // Máximo 10 (o el que definas)
+            
+            cantidadInput.value = nuevaCantidad;
+        }
+
+        function agregarAlCarritoDetalle() {
+            const cantidad = parseInt(document.getElementById('cantidad').value);
+            
+            for (let i = 0; i < cantidad; i++) {
+                agregarAlCarrito(productoActual.id); // Llama a la función global de script.js
+            }
+            
+            const btn = document.querySelector('.btn-agregar-carrito');
+            const textoOriginal = btn.innerHTML;
+            btn.innerHTML = '✅ ¡Agregado al carrito!';
+            btn.style.background = '#48bb78';
+            
+            setTimeout(() => {
+                btn.innerHTML = textoOriginal;
+                btn.style.background = '#667eea'; // O el color original que tenga el botón
+            }, 2000);
+        }
+
+        function consultarPorWhatsApp() {
+            const cantidad = document.getElementById('cantidad').value;
+            const mensaje = `Hola! Me interesa el siguiente producto:%0A%0A` +
+                            `🌱 *${productoActual.nombre}*%0A` +
+                            `💰 Precio: $${productoActual.precio.toFixed(2)}%0A` +
+                            `📊 Cantidad: ${cantidad}%0A` +
+                            `💵 Total: $${(productoActual.precio * cantidad).toFixed(2)}%0A%0A` +
+                            `¿Podrías darme más información?`;
+            
+            // Asegúrate de que este número de WhatsApp sea correcto
+            const whatsappUrl = `https://wa.me/18496576009?text=${encodeURIComponent(mensaje)}`; // Usé el número de tu footer
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>

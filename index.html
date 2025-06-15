@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hansel plantas - Inicio</title>
+    <link rel="stylesheet" href="estilo de paginas/main.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"> Hansel plantas</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="carrito.html" class="carrito-btn">
+                 Carrito
+                <span class="carrito-count" id="carrito-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Presentación de la página -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenido a Hansel Plantas</h1>
+            <p class="hero-subtitle">Tu destino para plantas medicinales y ornamentales de calidad</p>
+            <p class="hero-description">
+                Descubre nuestra amplia selección de plantas naturales, desde especies medicinales 
+                con propiedades curativas hasta hermosas plantas ornamentales que transformarán tu hogar.
+            </p>
+            <div class="hero-buttons">
+                <a href="productos.html" class="btn-primary">Ver Productos</a>
+                <a href="contacto.html" class="btn-secondary">Contactanos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección ¿Por qué elegirnos? -->
+    <section class="features">
+        <div class="container">
+            <h2>¿Por qué elegir Hansel Plantas?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Plantas de Calidad</h3>
+                    <p>Todas nuestras plantas son cuidadosamente seleccionadas y cultivadas con amor</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregamos tus plantas favoritas directamente en tu hogar de forma segura</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Asesoría Experta</h3>
+                    <p>Te ayudamos a elegir las mejores plantas según tus necesidades y espacio</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3>100% Natural</h3>
+                    <p>Sin químicos dañinos, solo plantas naturales y saludables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de categorías -->
+    <section class="categorias">
+        <div class="container">
+            <h2>Nuestras Categorías</h2>
+            <div class="categorias-grid">
+                <div class="categoria-card" onclick="window.location.href='productos.html#medicinales'">
+                    <div class="categoria-image">🌿</div>
+                    <h3>Plantas Medicinales</h3>
+                    <p>Descubre el poder curativo de la naturaleza</p>
+                    <span class="categoria-link">Ver plantas medicinales →</span>
+                </div>
+                <div class="categoria-card" onclick="window.location.href='productos.html#ornamentales'">
+                    <div class="categoria-image">🌺</div>
+                    <h3>Plantas Ornamentales</h3>
+                    <p>Embellece tu hogar con nuestras plantas decorativas</p>
+                    <span class="categoria-link">Ver plantas ornamentales →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hansel plantas</h3>
+                    <p>Tu jardín natural, nuestro compromiso</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p> WhatsApp: +1 849 657 6009</p>
+                    <p> Hanselsamp73@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

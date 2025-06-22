@@ -41,13 +41,13 @@
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    background: #667eea;
+    background: #4ab857;
     color: white;
     transform: translateY(-2px);
 }
 
 .carrito-btn {
-    background: #667eea;
+    background: #35893f;
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
@@ -57,7 +57,7 @@
 }
 
 .carrito-btn:hover {
-    background: #5a67d8;
+    background: #4ab857;
     transform: scale(1.05);
 }
 
